@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6, maximum-scale=1, user-scalable=no">
+
+    <title>AtecsTI Questionario</title>
+    <link rel="stylesheet" href="flowtype.js">
+    <link rel="shortcut icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body class="bg">
+
+
+
+
+    <!--INCIO DO CODIGO HTML-->
+    <form name="formg">
+        <fieldset style="width: 100%;" class="form-group">
+            <legend style="color: aliceblue;text-align: center;"> </legend>
+            <div class="container">
+                <div id="logo" class="logo">
+                    <img src="logo.png">
+                </div>
+                <input type="hidden" id="field-id" value="" />
+
+
+                <p class="argument" style="font-size: 28px;">Em função da pandemia Covid-19, o home office tornou-se
+                    indispensável. Manter os
+                    dados da empresa na nuvem é a forma mais segura, eficiente e funcional pois pode ser
+                    operacionalizado de qualquer lugar.
+                </p>
+
+                <label>Email
+                    <div class="form-email">
+                        <input type="email" class="form-control">
+
+                    </div>
+                </label>
+                <label>Telefone
+                    <div class="form-email">
+                        <input required type="text"  data-mask="(00)00000-0000" ,
+                         value="" id="telefone" class="form-control"
+                      placeholder="(XX)XXXXX-XXXX" />
+                    </div>
+                </label>
+
+
+
+                <br>
+
+                <label>1. Qual plataforma de gestão On-line, você utiliza para gerenciar sua empresa e clientes?
+                    <div class="form-so">
+                        <textarea required rows="1" name="plataforma" class="form-control" id="plataforma"></textarea>
+                    </div>
+                </label>
+
+                </br>
+
+
+
+
+                <label>2. Utiliza suas informações e dados na Nuvem ou Local?
+                    <div class="form-satisfeito">
+                        <label class="radioButton">Nuvem
+                            <input type="radio" name="radioDados" value="Nuvem" id="nuvem"
+                                onclick="funcEscolherNuvemOuLocal();" />
+                            <span class="circle"></span>
+                        </label>
+                        </br>
+                        <label class="radioButton">Local
+                            <input required type="radio" name="radioDados" value="Local" id="local"
+                                onclick="funcEscolherNuvemOuLocal();" />
+                            <span class="circle"></span>
+                        </label>
+                    </div>
+                </label>
+
+                </br>
+
+                <label>3. Acredita que os dados de sua empresa estão seguros?
+                    <div class="form-demanda">
+                        <label class="radioButton">Sim
+                            <input required type="radio" name="radioSeguro" value="Sim" id="simSeguro"
+                                onclick="funcDadosSeguros();" />
+                            <span class="circle"></span>
+                        </label>
+                        </br>
+                        <label required class="radioButton">Não
+                            <input type="radio" name="radioSeguro" value="Não" id="naoSeguro"
+                                onclick="funcDadosSeguros();" />
+                            <span class="circle"></span>
+                        </label>
+                    </div>
+                </label>
+
+                </br>
+
+                <label>4. Seu sistema de gerenciamento é personalizado para atender às suas necessidades?
+                    <div class="form-demanda">
+                        <label class="radioButton">Sim
+                            <input required type="radio" name="radioAtende" value="Sim" id="simAtende"
+                                onclick="funcAtende();" />
+                            <span class="circle"></span>
+                        </label>
+                        </br>
+                        <label class="radioButton">Não
+                            <input required type="radio" name="radioAtende" value="Não" id="naoAtende"
+                                onclick="funcAtende();" />
+                            <span class="circle"></span>
+                        </label>
+                    </div>
+                </label>
+
+                </br>
+
+                <label style="text-align: unset;">5.Considera um custo ou investimento, um sistema para gerenciamento
+                    total ou parcial da sua empresa?
+                    <div>
+                        <label class="radioButton">Investimento
+                            <input required type="radio" name="radioCustInvest" value="Investimento" id="invest"
+                                onclick="funcCustoOuInvestimento();" />
+                            <span class="circle"></span>
+                        </label>
+                        </br>
+                        <label class="radioButton">Custo
+                            <input required type="radio" name="radioCustInvest" value="custo" id="cust"
+                                onclick="funcCustoOuInvestimento();" />
+                            <span class="circle"></span>
+                        </label>
+                    </div>
+                </label>
+
+                </br>
+
+                <label>6. Se você já tem um sistema, qual foi o valor de aquisição?
+                    <div class="form-aquis">
+                        <label class="radioButton">Entre R$ 100,00 a R$ 999,99
+                            <input required type="radio" name="radioAquisicao" value="100,00 a 999,99" id="100a999"
+                                onclick="funcValorInvestimento();" />
+                            <span class="circle"></span>
+                        </label>
+                        </br>
+                        <label class="radioButton">Entre R$ 1.000,00 a R$ 9.999,99
+                            <input required type="radio" name="radioAquisicao" value="1.000,00 a 9.999,99" id="1ka9k"
+                                onclick="funcValorInvestimento();" />
+                            <span class="circle"></span>
+                        </label>
+                        </br>
+                        <label class="radioButton">Entre R$ 10.000,00 a R$ 99.999,99
+                            <input required type="radio" name="radioAquisicao" value="10.000,00 a 99.99,99" id="10ka99k"
+                                onclick="funcValorInvestimento();" />
+                            <span class="circle"></span>
+                        </label>
+                        </br>
+                        <label class="radioButton">Entre R$ 100.000,00 a R$ 999.999,99
+                            <input required type="radio" name="radioAquisicao" value="100.000,00 a 9999.99,99"
+                                id="100ka9999k" onclick="funcValorInvestimento();" />
+                            <span class="circle"></span>
+                        </label>
+                        </br>
+                        <label class="radioButton"> Maior que R$ 1.000.000,00
+                            <input required type="radio" name="radioAquisicao" value="Maior que 1.000.000,00"
+                                id="mais1M" onclick="funcValorInvestimento();" />
+                            <span class="circle"></span>
+                        </label>
+
+                </label>
+
+                </br>
+
+                <p>7. Qual o valor da manutenção mensal?
+                    O suporte atende a sua necessidade?
+                    <div class="form-melhor">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" style="font-size: 28px; height: 110%;">R$</div>
+                            <input required type="text" data-mask="000.000.000.000.000,00" , data-mask-reverse="true"
+                                step="any" value="" id="txtMensal" class="form-control" style="width: 380px;"
+                                placeholder="0,00" />
+                        </div>
+                        <div class="form-demanda">
+                            <label class="radioButton">Sim
+                                <input required type="radio" name="radioManutencao" value="Sim" id="simAtende"
+                                    onclick="funcManutencaoAtende();" />
+                                <span class="circle"></span>
+                            </label>
+                            <label class="radioButton">Não
+                                <input required type="radio" name="radioManutencao" value="Não" id="naoAtende"
+                                    onclick="funcManutencaoAtende();" />
+                                <span class="circle"></span>
+                            </label>
+                        </div>
+                    </div>
+                </p>
+
+                <label>8. Fale um pouco qual seria o formato ideal de um sistema gerencial para te atender:
+                    <div class="form-melhor">
+                        <textarea required class="form-control" id="ideal" rows="2"></textarea>
+                    </div>
+                </label>
+
+                </br>
+
+                <label>9. Já Imaginou ter uma Plataforma On Line, personalizada de acordo a sua necessidade com um
+                    valor que cabe em seu orçamento? Qual seria o valor ideal?
+
+                    <div class="form-melhor">
+                        <div class="form-demanda">
+                            <label class="radioButton">Sim
+                                <input type="radio" name="radioOnline" value="Sim" id="simOnline"
+                                    onclick="funcTerPlataformaOnline();" />
+                                <span class="circle"></span>
+                            </label>
+                            <label required class="radioButton" style="margin-right: 10px;">Não
+                                <input type="radio" name="radioOnline" value="Não" id="nãoOnline"
+                                    onclick="funcTerPlataformaOnline();" />
+                                <span class="circle"></span>
+                            </label>
+                            <div class="input-group-prepend">
+
+                                <div class="input-group-text" style="font-size: 28px; height: 110%;">R$</div>
+                                <input required type="text" step="any" data-mask="000.000.000.000.000,00" ,
+                                    data-mask-reverse="true" value="" id="valorIdeal" class="form-control"
+                                    style="width: 380px;" placeholder="0,00" />
+
+                            </div>
+                        </div>
+
+                    </div>
+                </label>
+
+
+                </br>
+                </br>
+                </br>
+                <button type="submit" id="btnsalvar" style="size: 300px  ;">Salvar</button>
+
+            </div>
+        </fieldset>
+    </form>
+
+    <!--FIM DO CODIGO HTML-->
+
+
+    <!--INICIO DE PACOTES,APIs JS-->
+    <script type="text/javascript" src="banco.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+    <!--FIM DOS PACOTES E APIs JS-->
+
+
+    <!--*****************************INICIO CODIGOS JS ***************************************************-->
+    <script>
+
+        input = document.getElementById("txtMensal")
+        input.addEventListener("mousewheel", function (event) { this.blur() })
+
+
+        //[INICIO FUNCOES DE SELECAO RADIO BUTTON]
+
+        try {
+            function funcEscolherNuvemOuLocal() {
+                var tipo = document.getElementsByName("radioDados");
+                if (tipo[0].checked) {
+                    dadosNuvOuLocal = "Nuvem";
+                }
+
+                else if (tipo[1].checked) {
+                    dadosNuvOuLocal = "Local";
+                }
+
+
+            }
+            function funcDadosSeguros() {
+                var tipo = document.getElementsByName("radioSeguro");
+                if (tipo[0].checked) {
+                    dadosSeguros = "Sim";
+                }
+
+                else if (tipo[1].checked) {
+                    dadosSeguros = "Não";
+                }
+
+
+            }
+            function funcCustoOuInvestimento() {
+                var tipo = document.getElementsByName("radioCustInvest");
+                if (tipo[0].checked) {
+                    cutsorinvest = "Investimento";
+                }
+
+                else if (tipo[1].checked) {
+                    cutsorinvest = "Custo";
+                }
+
+
+            }
+            function funcTerPlataformaOnline() {
+                var tipo = document.getElementsByName("radioOnline");
+                if (tipo[0].checked) {
+                    plataformaOnlie = "Sim";
+                }
+
+                else if (tipo[1].checked) {
+                    plataformaOnlie = "Não";
+                }
+
+            }
+            function funcManutencaoAtende() {
+                var tipo = document.getElementsByName("radioManutencao");
+                if (tipo[0].checked) {
+                    manutencaoAtende = "Sim";
+                }
+
+                else if (tipo[1].checked) {
+                    manutencaoAtende = "Não";
+                }
+
+            }
+            function funcAtende() {
+                var tipo = document.getElementsByName("radioAtende");
+                if (tipo[0].checked) {
+                    atende = "Sim";
+                }
+
+                else if (tipo[1].checked) {
+                    atende = "Não";
+                }
+
+
+            }
+            function funcValorInvestimento() {
+                var tipo = document.getElementsByName("radioAquisicao");
+                if (tipo[0].checked) {
+                    valorAquisicao = "100,00 a 999,99";
+                }
+
+                else if (tipo[1].checked) {
+                    valorAquisicao = "1.000,00 a 9.999,99";
+                }
+                else if (tipo[2].checked) {
+                    valorAquisicao = "10.000,00 a 99.99,99";
+                }
+                else if (tipo[3].checked) {
+                    valorAquisicao = "100.000,00 a 9999.99,99";
+                }
+                else if (tipo[4].checked) {
+                    valorAquisicao = "Maior que 1.000.000,00";
+                }
+
+
+            }
+        } catch{
+            alert("Obrigatorio marcar todos os campos!")
+        }
+
+        //[FIM FUNCOES DE SELECAO RADIO BUTTON]
+        jQuery(function ($) {
+            $(document).on('keypress', 'input.somente-numero', function (e) {
+                var square = document.getElementById("sonumero");
+                var key = (window.event) ? event.keyCode : e.which;
+                if ((key > 47 && key < 58)) {
+                    sonumero.style.backgroundColor = "#ffffff";
+                    return true;
+
+                } else {
+                    sonumero.style.backgroundColor = "#ff0000";
+                    return (key == 8 || key == 0) ? true : false;
+
+                }
+            });
+        });
+        //[INICIO FUNCAO SALVAR DADOS NO BANCO]
+        $(document).ready(function () {
+            var tdradios = document.getElementsByClassName("radioButton");
+            let conexao = new bdSql();
+            $("#btnsalvar").click(function () {
+                if (tdradios == true) {
+                    alert('Todos os campos são obrigatorios');
+                } else {
+                    let plataforma = $('#plataforma').val();
+                    let ideal = $('#ideal').val();
+                    let valorMensal = $('#txtMensal').val();
+                    let valorIdeal = $('#valorIdeal').val();
+                    let dados = [plataforma, dadosNuvOuLocal, dadosSeguros, atende, cutsorinvest, valorAquisicao, valorMensal, manutencaoAtende, ideal, plataformaOnlie, valorIdeal];
+                    function mudarCor() {
+                        document.getElementById("btnsalvar").style.backgroundColor = "##1487c7";
+                    }
+                    conexao.iserirDado(dados, function () {
+                        alert('Dados inseridos com sucesso!');
+                    });
+                }
+
+            })
+        });
+        //[FIM FUNCAO SALVAR DADOS NO BANCO]
+
+        /* formulario.addEventListener("", function (event) {
+             fetch('https://reqres.in/api/users/2', {
+                 method: 'GET',
+                 body: JSON.stringify(dados)
+             })
+                 .then(function (response) {
+                     return response.json()
+                     console.log(response);
+                 })
+
+
+         })*/
+
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.14.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <!--*****************************FIM DE CODIGOS JS ***************************************************-->
+</body>
+
+</html>
